@@ -1,1 +1,50 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: 'Inter', sans-serif;
+    --accent-font: 'PressStart2P', sans-serif;
+    --text-weight: 400;
+    --title-weight: 700;
+    --header-max-inline-size: 1440px;
+    --header-min-inline-size: 320px;
+    /* --header-padding: clamp(1rem, 3vw, 2rem); */
+    --logo-size: clamp(2rem, 5vw, 3rem);
+    --header-title-size: clamp(1.5rem, 4vw, 2.5rem);
+    --background-stripes-color: #d3d3d3;
+    --background-gradient-start: #e7e7e7;
+    --background-gradient-end: #1a1a1a;
+    --background-image: 
+        repeating-linear-gradient(90deg, var(--background-stripes-color) 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(180deg, var(--background-stripes-color) 0 2px, transparent 2px 4px);
+        /* linear-gradient(180deg, var(--background-gradient-start) 0.01%, var(--background-gradient-end) 100%); */
+        /* repeating-linear-gradient(
+        to right,
+        var(--background-stripes-color),
+        var(--background-stripes-color) 2px,
+        transparent 2px,
+        transparent 4px
+        ),
+        repeating-linear-gradient(
+        to bottom,
+        var(--background-stripes-color),
+        var(--background-stripes-color) 2px,
+        transparent 2px,
+        transparent 4px
+        ),
+        linear-gradient(
+        to bottom,
+        var(--background-gradient-start) 0.01%,
+        var(--background-gradient-end) 100%
+        ); */
+    --card-inline-size: clamp(376px, 50vw, 696px);
+    --card-bg: #fff;
+    --border-color: #000000;
+    --title-font-size: 18px;
+    --mobile-ilnine-size: 100%;
+    --label-font-size: 14px;
+    --label-stroke-color: #FFFFFF;
+    --label-blend-mode: hard-light;
+    --label-text-color: #000000;
+    --text-stroke-width: 0.5px;
+    --text-stroke-color: var(--label-stroke-color);
+    --button-font-size: 14px;
+}
