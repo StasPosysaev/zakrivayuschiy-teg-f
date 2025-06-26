@@ -46,4 +46,7 @@
     --text-stroke-color: var(--label-stroke-color);
     --button-font-size: 14px;
     --full-width: 100%;
+    --accent-color: #000000;
+    --text-color: #000;
+    --hover-text-color: #ffffff;
 }

@@ -127,18 +127,6 @@
   padding: 0 25px 25px 0;
 }
 
-.button {
-  border: none;
-  background-color: var(--card-bg);
-}
-
-.card__like-button {
-  border: 2px solid var(--border-color);
-  padding: 9px 34px;
-  font-size: var(--button-font-size);
-  line-height: 90%;
-}
-
 .card__icon-button {
   padding-block-start: 9px;
 }
@@ -150,6 +138,30 @@
   margin-inline-start: 18px;
 }
 
+.button {
+  position: relative;
+  border: none;
+  background-color: none;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.5s ease-in-out;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button {
+  border: 2px solid var(--border-color);
+  padding: 9px 34px;
+  font-size: var(--button-font-size);
+  line-height: 90%;
+  background: var(--card-bg);
+  overflow: hidden;
+}
+
 .save__button {
   display: flex;
   justify-content: center;
@@ -157,13 +169,49 @@
   border: 2px solid var(--border-color);
   inline-size: 335px;
   padding: 15px 0;
+  background: var(--card-bg);
+  overflow: hidden;
 }
 
 .button__text {
+  position: relative;
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
   line-height: 90%;
   padding-block-start: 5px;
+  z-index: 2;
+  mix-blend-mode: difference;
+  color: var(--hover-text-color);
+}
+
+.card__like-button::before,
+.save__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.card__like-button:hover::before,
+.save__button:hover::before {
+  transform: scaleX(1);
+}
+
+.save__button svg {
+  z-index: 2;
+  fill: var(--text-color);
+  transition: fill 0.5s ease;
+}
+
+.save__button:hover svg {
+  fill: var(--hover-text-color);
 }
 
 .modal {
@@ -211,8 +259,34 @@
   padding: 10px 0;
 }
 
+.sepia {
+  filter: sepia(70%) blur(1px);
+}
 
+.contrast {
+  filter: contrast(200%);
+}
 
+.brightness {
+  filter: hue-rotate(-20deg) brightness(1.1);
+}
+
+.gray {
+  filter: grayscale(100%);
+}
+
+.invert {
+  filter: invert(80%);
+}
+
+.saturate {
+  filter: brightness(1.2) saturate(1.5);
+}
+
+.shadow {
+  filter: brightness(0.8) contrast(150%)
+    drop-shadow(0 0 8px rgba(0, 0, 255, 0.36));
+}
 
 @media (width <= 376px) {
   .fullwidth {
@@ -220,7 +294,24 @@
   }
 
   .card__section {
-    margin-block-end: 50px;
+    margin-block-end: 51.3px;
+  }
+
+  .card__content {
+    padding-inline-end: 26px;
+  }
+
+  .card__title {
+    padding: 4px 10px 6px 10px;
+  }
+
+  .card__image-container {
+    margin-block-end: 2px;
+  }
+
+  .card__label {
+    top: 24px;
+    right: 13px;
   }
 
   .save__container {
@@ -232,6 +323,4 @@
     align-items: center;
     inline-size: 306px;
   }
-
-
 }
