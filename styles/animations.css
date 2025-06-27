@@ -1,8 +1,8 @@
-@keyframes blink-and-stay {
-  0% { opacity: 0; }
+/* @keyframes blink-and-stay {
+  0% { opacity: 0.5; }
   50% { opacity: 1; }
   100% { opacity: 1; }
-}
+} */
 
 @keyframes heart-scale {
   0% {transform: scale(1);}
@@ -38,9 +38,11 @@
 }
 
 .like-icon.is-liked .heart {
+  transform-origin: center;
   animation: heart-scale 0.3s 0.1s ease-in forwards;
 }
 
 .like-icon.is-liked .sparks {
+  transform-origin: center;
   animation: sparks-appear 0.3s 0.3s ease-in forwards;
 }
