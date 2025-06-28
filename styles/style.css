@@ -29,6 +29,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: var(--card-bg);
 }
 
 .header__title {
@@ -85,7 +86,7 @@
   font-family: var(--accent-font);
   font-size: var(--label-font-size);
   mix-blend-mode: var(--label-blend-mode);
-  opacity: 0.7;
+  opacity: 50%;
 }
 
 @supports ((-webkit-text-stroke: 1px black) or (text-stroke: 1px black)) {
@@ -301,7 +302,7 @@
 .modal {
   border: 2px solid var(--border-color);
   inline-size: var(--modal-size);
-  background-color: transparent;
+  background-color: var(--card-bg);
 }
 
 .modal[opened] {
